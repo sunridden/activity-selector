@@ -22,24 +22,26 @@ while(loadedActivities != True):
 while(foundWinner != True):
     index = 0
     startingIndex = 0
+
     if (len(activityList) == 1 or len(activityList) == 0):
         foundWinner = True
         continue
     if (len(activityList) % 2 != 0):
         startingIndex = 1
         index = 1 
+        
     for activity in range(startingIndex, len(activityList), 2): 
         first = activityList[index]
         second = activityList[index + 1]
-        print(first + ' vs ' + second);
         roundWinner = random.randint(0, 1)
+
         if (roundWinner == 0):
-            winnerIndex = index
             loserIndex = index + 1
+            print(first + ' (winner) vs ' + second);
         else:
-            winnerIndex = index + 1
             loserIndex = index
-        print('Winner is ' + activityList[winnerIndex])
+            print(first + ' vs ' + second + ' (winner)');
+
         index += 2
         losers.append(activityList[loserIndex])
 
@@ -47,4 +49,7 @@ while(foundWinner != True):
         activityList.remove(x)
     losers = []
 
-print(activityList)
+winner = ""
+winner = winner.join(activityList)
+
+print("Your chosen activity is " + winner)
