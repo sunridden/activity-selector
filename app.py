@@ -10,7 +10,7 @@ print('Enter all activities below. Enter "stop" when finished.')
 #Stores all user inputted activities
 while(loadedActivities != True):
     newActivity = input()
-    if (newActivity == 'stop' or newActivity == 'Stop'):
+    if (newActivity.lower() == 'stop'):
         loadedActivities = True
         continue
     print('Please enter the next activity or "stop" to finish.')
