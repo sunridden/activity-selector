@@ -13,8 +13,9 @@ while(loadedActivities != True):
     if (newActivity.lower() == 'stop'):
         loadedActivities = True
         continue
+    if (newActivity != '' and newActivity not in activityList):
+        activityList.append(newActivity)
     print('Please enter the next activity or "stop" to finish.')
-    activityList.append(newActivity)
 
 #Pairs the activites to 'fight' one another in a random draw until one activity remains
 
